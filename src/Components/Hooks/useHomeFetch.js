@@ -1,0 +1,39 @@
+import {useEffect, useState} from 'react'
+import {API_KEY, API_URL} from "../../Config/config";
+
+export const useHomeFetch = () => {
+    const [state, setState] = useState({movies: []});
+    const [loading, setLoading] = useState(false );
+    const [error, setError] = useState(false);
+
+    console.log(state);
+
+    const fetchMovies = async (endpoint) => {
+        setError(false);
+        setLoading(true);
+
+        try {
+            const result = await (await fetch(endpoint)).json();
+            console.log('Result: ' + result);
+            setState(prev => ({
+                ...prev,
+                movies: [...result.results],
+                heroImage: prev.HeroImage && result.results[0],
+                currentPage: result.page,
+                totalPages: result.total_pages,
+            }))
+
+        } catch (e) {
+            setError(true);
+            console.error('Error from Home: ' + e);
+        }
+        setLoading(false)
+    };
+
+    useEffect(() => {
+        fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY} `);
+    }, []);
+
+
+    return[{state, loading, error}, fetchMovies()]
+};
