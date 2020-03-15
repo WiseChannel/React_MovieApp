@@ -8,20 +8,19 @@ export const useHomeFetch = () => {
 
     console.log(state);
 
-    const fetchMovies = async (endpoint) => {
+    const fetchMovies = async endpoint => {
         setError(false);
         setLoading(true);
 
         try {
             const result = await (await fetch(endpoint)).json();
-            console.log('Result: ' + result);
             setState(prev => ({
-                ...prev,
-                movies: [...result.results],
-                heroImage: prev.HeroImage && result.results[0],
-                currentPage: result.page,
-                totalPages: result.total_pages,
-            }))
+              ...prev,
+              movies: [...result.results],
+              heroImage: prev.heroImage || result.results[0],
+              currentPage: result.page,
+              totalPages: result.total_pages,
+            }));
 
         } catch (e) {
             setError(true);
@@ -35,5 +34,5 @@ export const useHomeFetch = () => {
     }, []);
 
 
-    return[{state, loading, error}, fetchMovies()]
+    return[{state, loading, error}, fetchMovies]
 };
