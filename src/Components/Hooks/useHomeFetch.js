@@ -33,6 +33,5 @@ export const useHomeFetch = () => {
         fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY} `);
     }, []);
 
-
     return[{state, loading, error}, fetchMovies]
 };
