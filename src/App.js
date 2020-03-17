@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.css';
 import Header from "./Components/Header/Header";
-import Main from "./Components/Main";
-import Footer from "./Components/Footer";
+
+import {GlobalStyle} from './Components/styles/GlobalStyle';
 
 import Home from "./Components/Home";
 
-function App() {
-  return (
-      <div className='App'>
-          <Header/>
-          <Home/>
-     </div>
-  );
+
+const App = () => {
+  return(
+      <>
+        <Header/>
+        <Home/>
+        <GlobalStyle/>
+    </>
+  )
 }
 
 export default App;
