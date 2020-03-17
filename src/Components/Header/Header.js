@@ -1,7 +1,7 @@
 import React from 'react'
+import styles from 'styled-components'
 
-
-import {StyledHeader, StyledRMDBLogo, StyledTMDBLogo} from '../styles'
+import {StyledHeader } from '../styles/StyledHeader'
 
 //import NewLogo from '../images/...'       *Нарисовать логотип* 
 
@@ -11,8 +11,6 @@ const Header = () => {
             <div className='header-content'>
                 <h2>NewLogo_IMG</h2>   
                 <h2>TmDb</h2>
-                <StyledRMDBLogo/>
-                <StyledTMDBLogo/>
             </div>
         </StyledHeader>
     )
