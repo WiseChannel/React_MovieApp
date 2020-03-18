@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/WiseChannel/React_MovieApp/static/css/main.e9fd379b.chunk.css",
+    "main.js": "/WiseChannel/React_MovieApp/static/js/main.c79d991f.chunk.js",
+    "main.js.map": "/WiseChannel/React_MovieApp/static/js/main.c79d991f.chunk.js.map",
+    "runtime-main.js": "/WiseChannel/React_MovieApp/static/js/runtime-main.287152d1.js",
+    "runtime-main.js.map": "/WiseChannel/React_MovieApp/static/js/runtime-main.287152d1.js.map",
+    "static/js/2.f44f4135.chunk.js": "/WiseChannel/React_MovieApp/static/js/2.f44f4135.chunk.js",
+    "static/js/2.f44f4135.chunk.js.map": "/WiseChannel/React_MovieApp/static/js/2.f44f4135.chunk.js.map",
+    "index.html": "/WiseChannel/React_MovieApp/index.html",
+    "precache-manifest.17417d95d22e6f4076e4233d273ac6b8.js": "/WiseChannel/React_MovieApp/precache-manifest.17417d95d22e6f4076e4233d273ac6b8.js",
+    "service-worker.js": "/WiseChannel/React_MovieApp/service-worker.js",
+    "static/css/main.e9fd379b.chunk.css.map": "/WiseChannel/React_MovieApp/static/css/main.e9fd379b.chunk.css.map",
+    "static/js/2.f44f4135.chunk.js.LICENSE.txt": "/WiseChannel/React_MovieApp/static/js/2.f44f4135.chunk.js.LICENSE.txt",
+    "static/media/no_image.jpg": "/WiseChannel/React_MovieApp/static/media/no_image.31f5bb1d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.287152d1.js",
+    "static/js/2.f44f4135.chunk.js",
+    "static/css/main.e9fd379b.chunk.css",
+    "static/js/main.c79d991f.chunk.js"
+  ]
+}
