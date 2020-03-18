@@ -14,7 +14,6 @@ import styled from 'styled-components';
     display: flex;
     justify-content: space-between;
 
-
     h2 {
       color: white; 
     }
