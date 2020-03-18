@@ -14,7 +14,7 @@ import HeroImage from "./Elements/HeroImage";
 import SearchBar from "./Elements/SearchBar";
 import Grid from "./Elements/Grid";
 import MovieThumb from "./Elements/MovieThumb";
-import LoadMore from "./Elements/LoadMore";
+import LoadMoreBtn from "./Elements/LoadMore";
 import Spinner from "./Elements/Spinner";
 
 //import custom hook
@@ -32,6 +32,15 @@ const Home = () => {
         fetchMovies] = useHomeFetch();
     const [searchTerm, setSearchTerm] = useState('')
 
+    const loadMoreMovies = () => {
+        const searchEndpoint = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${currentPage + 1}`;
+        
+        const popularEndpoint = `${API_URL}movie/popular?api_key=${API_KEY}&page=${currentPage + 1}`;
+    
+        const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
+    
+        fetchMovies(endpoint);
+      }
 
     if(error) return <div>New error in Home</div>
 
@@ -61,7 +70,9 @@ const Home = () => {
             ))}
           </Grid>
           {loading && <Spinner />}
-          <LoadMore text="Load More" callback={LoadMore} />
+          {currentPage < totalPages && !loading && (
+            <LoadMoreBtn text="Load More" callback={loadMoreMovies} />
+          )}
         </>
       );
 };
