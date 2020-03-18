@@ -11,6 +11,13 @@ import styled from 'styled-components';
     padding: 20px 0px;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+
+    h2 {
+      color: white; 
+    }
 
     @media screen and (max-width: 500px) {
       max-width: 1280px;
