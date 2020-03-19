@@ -1,5 +1,9 @@
 import {useEffect, useState} from 'react'
-import {API_KEY, API_URL} from "../../Config/config";
+import {
+    API_KEY,
+    API_URL,
+    POPULAR_BASE_URL,
+} from "../../Config/config";
 
 export const useHomeFetch = () => {
     const [state, setState] = useState({movies: []});
@@ -35,7 +39,7 @@ export const useHomeFetch = () => {
     };
 
     useEffect(() => {
-        fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY} `);
+        fetchMovies(POPULAR_BASE_URL);
     }, []);
 
     return[{state, loading, error}, fetchMovies]
