@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from 'styled-components'
 
 import {StyledHeader } from '../styles/StyledHeader'
 
@@ -9,8 +8,8 @@ const Header = () => {
     return(
         <StyledHeader>
             <div className='header-content'>
-                <h2>NewLogo_IMG</h2>   
-                <h2>TmDb</h2>
+                <h2>React Movie</h2>   
+                <h2>WiseChannel</h2>
             </div>
         </StyledHeader>
     )

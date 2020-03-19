@@ -1,7 +1,5 @@
 import {useEffect, useState} from 'react'
 import {
-    API_KEY,
-    API_URL,
     POPULAR_BASE_URL,
 } from "../../Config/config";
 
