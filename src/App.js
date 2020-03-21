@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from "./Components/Header/Header";
+import Header from "./Components/Elements/Header";
 
 import { GlobalStyle } from './Components/styles/GlobalStyle';
 import { Router } from '@reach/router';
