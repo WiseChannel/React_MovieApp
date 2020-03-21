@@ -25,7 +25,7 @@ const Actor = ({ actor }) => (
 );
 
 Actor.proppTypes = {
-    actor: PropTypes.string
+    actor: PropTypes.object
 }
 
 export default Actor

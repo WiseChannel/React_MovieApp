@@ -23,15 +23,16 @@ import { useHomeFetch } from "./Hooks/useHomeFetch";
 import NoImage from './images/no_image.jpg'
 
 const Home = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
     const [
         {
             state: {movies, currentPage, totalPages, heroImage}, 
             loading, 
             error 
         }, 
-        fetchMovies] = useHomeFetch();
+        fetchMovies] = useHomeFetch(searchTerm);
 
-    const [searchTerm, setSearchTerm] = useState('');
 
     const searchMovies = search => {
       const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;

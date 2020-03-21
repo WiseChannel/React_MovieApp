@@ -13,12 +13,9 @@ export const useMovieFetch = movieId => {
         try {
             const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
             const result = await (await fetch(endpoint)).json();
-            console.log(result);
 
             const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
             const creditsResult = await (await fetch(creditsEndpoint)).json();
-            console.log(creditsResult);
-
             const directors = creditsResult.crew.filter(
                 member => member.job === 'Director'
             );
@@ -33,12 +30,10 @@ export const useMovieFetch = movieId => {
             setError(true);
         }
         setLoading(false);
-    }, [movieId]);
+    }, [movieId])
 
     useEffect(() => {
         fetchData();
-    }, [fetchData]);
-
-
+    }, [fetchData])
     return [state, loading, error];
 };
