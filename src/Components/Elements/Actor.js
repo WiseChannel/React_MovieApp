@@ -5,6 +5,7 @@ import NoImage from '../images/no_image.jpg'
 
 //import Components
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../Config/config";
+import PropTypes from 'prop-types'
 
 //import Style
 import { StyledActor } from "../styles/StyledActor";
@@ -23,5 +24,8 @@ const Actor = ({ actor }) => (
     </StyledActor>
 );
 
+Actor.proppTypes = {
+    actor: PropTypes.string
+}
 
 export default Actor
