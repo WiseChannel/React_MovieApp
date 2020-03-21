@@ -18,15 +18,20 @@ const Movie = ({ movieId }) => {
     if (error) return <div>Something went to wrong :(</div>;
     if (loading) return <Spinner/>
 
-    return(
+    return (
         <>
-            <Navigation movie={movie.original_title}/>
-            <MovieInfo movie={movie}/>
-            <MovieInfoBar/>
-            <Grid>
-                <Actor/>
+            <Navigation movie={movie.original_title} />
+            <MovieInfo movie={movie} />
+            <MovieInfoBar
+                time={movie.runtime}
+                budget={movie.budget}
+                revenue={movie.revenue}
+            />
+            <Grid header="Actors">
+                {movie.actors.map(actor => (
+                    <Actor key={actor.credit_id} actor={actor} />
+                ))}
             </Grid>
-            <Spinner/>
         </>
     )
 };
