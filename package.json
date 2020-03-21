@@ -2,7 +2,6 @@
   "name": "react-movie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/WiseChannel/React_MovieApp",
   "dependencies": {
     "@reach/router": "^1.3.3",
     "prop-types": "^15.7.2",

@@ -30,12 +30,13 @@ const Home = () => {
             error 
         }, 
         fetchMovies] = useHomeFetch();
-    const [searchTerm, setSearchTerm] = useState('')
+
+    const [searchTerm, setSearchTerm] = useState('');
 
     const searchMovies = search => {
       const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
 
-      setSearchTerm(search)
+      setSearchTerm(search);
       fetchMovies(endpoint)
     }
 
@@ -49,9 +50,9 @@ const Home = () => {
         fetchMovies(endpoint);
       }
 
-    if(error) return <div>New error in Home</div>
+    if(error) return <div>New error in Home</div>;
 
-    if(!movies[0]) return <Spinner/>
+    if(!movies[0]) return <Spinner/>;
 
     return (
         <>
