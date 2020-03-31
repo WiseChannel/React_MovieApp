@@ -6,7 +6,6 @@ export const useHomeFetch = searchTerm => {
     const [loading, setLoading] = useState(false );
     const [error, setError] = useState(false);
 
-    console.log(state);
 
     const fetchMovies = async endpoint => {
         setError(false);

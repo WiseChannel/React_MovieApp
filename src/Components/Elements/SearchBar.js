@@ -10,7 +10,6 @@ const SearchBar = ({ callback }) => {
     const timeOut = useRef(null)
 
     const doSearch = e => {
-        console.log(e.target.value);
         const { value } = e.target
 
         clearTimeout(timeOut.current)
