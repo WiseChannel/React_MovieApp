@@ -10,7 +10,9 @@ import NoImage from '../images/no_image.jpg';
 
 //import Style
 import  { StyledMovieInfo } from "../styles/StyledMovieInfo";
+import LoadMoreBtn from "./LoadMore";
 
+//Component containing movie information
 const MovieInfo = ({ movie }) => (
     <StyledMovieInfo backdrop={movie.backdrop_path}>
         <div className="movieinfo-content">
@@ -46,6 +48,7 @@ const MovieInfo = ({ movie }) => (
     </StyledMovieInfo>
 );
 
+//checking propTypes input parameters
 MovieInfo.propTypes = {
     movie: PropTypes.object,
     directors: PropTypes.array,

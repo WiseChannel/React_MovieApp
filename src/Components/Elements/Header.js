@@ -1,10 +1,10 @@
 import React from 'react'
 
+//import components
 import { StyledHeader } from '../styles/StyledHeader'
 import { Link } from '@reach/router';
 
-//import NewLogo from '../images/...'       *Нарисовать логотип*
-
+//Header component returns a link to the router of the main page and the name of the author
 const Header = () => {
     return(
         <StyledHeader>

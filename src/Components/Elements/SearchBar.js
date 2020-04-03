@@ -3,7 +3,9 @@ import React,{ useState, useRef } from 'react'
 import FontAwesome from 'react-fontawesome'
 import {StyledSearchBar, StyledSearchBarContent} from '../styles/StyledSearchBar'
 import PropTypes from 'prop-types'
+import Navigation from "./Navigation";
 
+//movie search bar components
 const SearchBar = ({ callback }) => {
 
     const [state, setState] = useState('')
@@ -24,12 +26,12 @@ const SearchBar = ({ callback }) => {
     return (
         <StyledSearchBar>
             <StyledSearchBarContent>
-                <FontAwesome 
+                <FontAwesome
                     className="fa-search"
                     name="search"
                     size="2x"
                 />
-                <input 
+                <input
                     type="text"
                     placeholder="Search Movie"
                     onChange={doSearch}
@@ -40,6 +42,7 @@ const SearchBar = ({ callback }) => {
     )
 };
 
+//checking propTypes input parameters
 SearchBar.propTypes = {
     callback: PropTypes.func
 }

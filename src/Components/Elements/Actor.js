@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 //import Style
 import { StyledActor } from "../styles/StyledActor";
 
+//Component of the actor that contains the name, character and img
 const Actor = ({ actor }) => (
     <StyledActor>
         <img src={

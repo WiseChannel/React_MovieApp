@@ -7,7 +7,9 @@ import PropTypes from 'prop-types'
 
 //import Styled
 import { StyledMovieInfoBar } from "../styles/StyledMovieInfoBar";
+import MovieInfo from "./MovieInfo";
 
+//Component contains information about time, budget, income
 const MovieInfoBar = ({ time, budget, revenue }) => (
     <StyledMovieInfoBar>
         <div className="movieinfobar-content">
@@ -35,6 +37,7 @@ const MovieInfoBar = ({ time, budget, revenue }) => (
     </StyledMovieInfoBar>
 );
 
+//checking propTypes input parameters
 MovieInfoBar.propTypes = {
     time: PropTypes.number,
     budget: PropTypes.number,

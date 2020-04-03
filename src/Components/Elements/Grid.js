@@ -3,6 +3,7 @@ import React from 'react'
 import { StyledGrid, StyledGridContent } from '../styles/StyledGrid'
 import PropTypes from 'prop-types'
 
+//component that serves as a wrapper
 const Grid = ({ header, children }) => (
    <StyledGrid>
      <h1>{header}</h1>
