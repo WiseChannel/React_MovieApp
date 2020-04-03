@@ -22,18 +22,19 @@ import { useHomeFetch } from "./Hooks/useHomeFetch";
 
 import NoImage from './images/no_image.jpg'
 
+// Component of the House that stores the method of searching for films and downloading new films
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const [
         {
-            state: {movies, currentPage, totalPages, heroImage}, 
-            loading, 
-            error 
-        }, 
+            state: {movies, currentPage, totalPages, heroImage},
+            loading,
+            error
+        },
         fetchMovies] = useHomeFetch(searchTerm);
 
-
+    //Movie search method
     const searchMovies = search => {
       const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
 
@@ -41,20 +42,22 @@ const Home = () => {
       fetchMovies(endpoint)
     }
 
+    //Movie upload method
     const loadMoreMovies = () => {
-      
+
       const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage + 1}`;
       const popularEndpoint = `${POPULAR_BASE_URL}&page=${currentPage + 1 }`;
 
         const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
-    
+
         fetchMovies(endpoint);
       }
 
+    //checking for errors and movie availability
     if(error) return <div>New error in Home</div>;
-
     if(!movies[0]) return <Spinner/>;
 
+    //component render
     return (
         <>
         {!searchTerm && (
@@ -64,8 +67,7 @@ const Home = () => {
           text={heroImage.overview}
         />
         )}
-          
-          <SearchBar 
+          <SearchBar
             callback={searchMovies}
           />
           <Grid header={searchTerm ? 'Search Result' : 'Popular Movies'}>

@@ -1,15 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
+
 import { API_URL, API_KEY } from "../../Config/config";
 
+//Component for searching movies by id
 export const useMovieFetch = movieId => {
+
+    //local state states download, date and errors
     const [state, setState] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
+    //Returns a memoized callback.
     const fetchData = useCallback(async () => {
         setError(false);
         setLoading(true);
 
+        //request
         try {
             const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
             const result = await (await fetch(endpoint)).json();
@@ -20,6 +26,7 @@ export const useMovieFetch = movieId => {
                 member => member.job === 'Director'
             );
 
+            //put the new result in a state
             setState({
                 ...result,
                 actors: creditsResult.cast,
@@ -32,6 +39,7 @@ export const useMovieFetch = movieId => {
         setLoading(false);
     }, [movieId])
 
+    //calls the component fetch date in case of new changes
     useEffect(() => {
         fetchData();
     }, [fetchData])
